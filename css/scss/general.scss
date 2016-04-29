@@ -30,7 +30,7 @@ CSS tooltip-----------  @include tooltiptooltip($content: attr(data-tooltip), $d
 
 /*---------------------- 
     BUTTON STYLES
-------------------------*/
+------------------------
 .button {
     height: 42px; 
     padding: 0 17px; 
@@ -45,7 +45,7 @@ CSS tooltip-----------  @include tooltiptooltip($content: attr(data-tooltip), $d
     
     &:hover {background-color: rgba(255,255,255, .2);}
 }
-
+*/
 
 /*---------------------- 
     HEADER STYLES
@@ -55,83 +55,85 @@ header {
             left:0;
             @include position(absolute, 0, auto, auto, 0);
             width: 100%;
-            height: 100px;
             z-index: 100;
-            background: chocolate;
             @include transition(all, .4s);
             
-	.wrapper {
-            @include flex();
-            height: 100%;
-	}
-
     @include m800 {
              @include position(fixed, 0, auto, auto, -100%);
              width: 260px !important;
              height: 100%;
              text-align: center;
-             background-color: #191919;
              margin-top: 0;
              padding: 20px 0;
              z-index: 100;
+             background-color: $colorGrey;
              
              &.active {left: 0;}
-             
-             .wrapper {
-                   @include flexDirection(column);
-                   width: 100%;
-            }
     }
-}
+            
+     /*-------- header_info ---------*/       
+    .header__info {
+         background: url('../images/header_info_bg.jpg') no-repeat center center;
+         @include flex();
+         .logo {
+                    position: relative;
+                    height: 115px;
 
-.logo {
-            position: relative;
-            width: 200px;
-            height: 0;
-
-	& a {
-	            display: block;
-	            height: 100%;
-	            width: 100%;
-	      & img {
-            		width: 100%;
-		}
-	}
-}
-
-
-/*-------- nav ---------*/
-nav ul {
-            @include flex();
-            list-style-type: none;
-        &  a {
-                font-size: 16px;
-                font-family: 'helvetica';
-                color: #FFF;
-                display: inline-block;
-                padding: 3px 15px 2px;
-                background-color: rgba(255,255,255, .0);
-                text-decoration: none;
-                @include transition(all, .2s);
-                -webkit-border-radius: 3px;
-                        border-radius: 3px;
-            &:hover {background-color: rgba(255,255,255, .2);}
+            & a {
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                  & img {
+                            width: 100%;
+                }
+            }
         }
+    }
 
 
-      @include m800 { 
-                  display: block;
-                  height: 100%;
-                  overflow: scroll;
-                  position: relative;
-                  
-                  li a                    {   
+    /*-------- nav ---------*/
+    nav {
+        width: 100%;
+        background-color: $colorGrey;
+        & ul {
+                    @include flex();
+                    list-style-type: none;
+                    margin: 0;
+                &  a {
+                        font:  12px 'museo_sans_cyrl500';
+                        text-transform: uppercase;
+                        color: #FFF;
+                        display: inline-block;
+                        padding: 22px 20px 15px;
+                        text-decoration: none;
+                        border-bottom: 4px solid transparent;
+                        @include transition(all, .2s);
+                    &:hover {border-bottom: 4px solid $colorGreyL;}
+                    &.active {border-bottom: 4px solid $colorBlue;}
+                }
+
+        }
+        @include m800 { 
+            display: block;
+            height: 100%;
+            width: 100%;
+            overflow: scroll;
+            position: relative;
+                & ul { 
+                    @include flexDirection(column);
+                    width: 100% !important;
+                }
+                      
+                    &  li a  {   
                         margin: 0 0 25px 0;
                         &.active {color: #ECCC1D;}
                         &:hover  {background: transparent;}
-                  } 
-      }
+                    } 
+        }
+    }
 }
+
+
 
 
 
@@ -184,20 +186,10 @@ nav ul {
       height: 100%;
       min-height: 650px;
       max-height: 900px;
-      background: url('../images/law.jpg') no-repeat center center;
+      background: url('../images/offer_bg.jpg') no-repeat center center;
       background-size: cover;
       padding: 100px 0 0 0;
       position: relative;
-        
-        &:before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            @include position(absolute, 0, auto, auto, 0);
-            display: block;
-            background-color: rgba(32, 40, 51, .75);
-            z-index: 0;
-        }
 
         .offerInfo {
             height: 100%;
