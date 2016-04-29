@@ -108,6 +108,7 @@ header {
      /*-------- header_info ---------*/       
     .header__info {
          background: url('../images/header_info_bg.jpg') no-repeat center center;
+         padding: 14px 0;
         .wrapper {
              @include flex();   
         }
@@ -123,12 +124,33 @@ header {
             & span {
                         display: inline-block;
                         vertical-align: middle;
+                        font: $fontVerdana;
+                        text-align: left;
+                        margin-left: 24px;
             }
         }
 
         .contactUs {
+            color: $colorGrey;
+            text-align: left;
             a {
                 display: block;
+                text-align: left;
+                font-family: 'museo_cyrl700';
+            } 
+            .tel {
+                font-size: 24px;
+            }
+            .mail {
+                font-size: 14px;
+                color: $colorBlue;
+                margin: 5px 0;
+            }
+            span  {
+                font-size: 14px;
+                text-align: left;
+                color: $colorGrey;
+                font-family: 'museo_cyrl700';
             }  
         }
     }/*-------- end header__info ---------*/     
@@ -142,12 +164,14 @@ header {
                     @include flex();
                     list-style-type: none;
                     margin: 0;
+            li:before {content: " | "; color: $colorGreyL; margin-right: 0; vertical-align: middle;}
+            li:first-of-type:before {display: none;}
             &  a {
                     font:  12px 'museo_sans_cyrl500';
                     text-transform: uppercase;
                     color: #FFF;
                     display: inline-block;
-                    padding: 22px 20px 15px;
+                    padding: 22px 18px 15px;
                     text-decoration: none;
                     border-bottom: 4px solid transparent;
                     @include transition(all, .2s);
@@ -176,6 +200,8 @@ header {
     }/*-------- end nav ---------*/    
        
 }/*-------- end header ---------*/       
+
+
 
 
 
@@ -237,7 +263,7 @@ header {
 
         .offerInfo {
             height: 100%;
-            @include flex($alignI: center, $justify: space-around, $direction: column);
+            @include flex($alignI: center, $justify: center, $direction: column);
             z-index: 2;
             position: relative;
             text-align: center;
@@ -257,6 +283,18 @@ header {
 }
 
 
+ 
+.icon-2 { background-position: -5px -0px; width: 101px; height: 100px; }
+.icon-10 { background-position: -5px -105px; width: 100px; height: 100px; }
+.icon-3 { background-position: -5px -210px; width: 100px; height: 100px; }
+.icon-4 { background-position: -5px -315px; width: 100px; height: 100px; }
+.icon-5 { background-position: -5px -420px; width: 100px; height: 100px; }
+.icon-6 { background-position: -5px -525px; width: 100px; height: 100px; }
+.icon-7 { background-position: -5px -630px; width: 100px; height: 100px; }
+.icon-8 { background-position: -5px -735px; width: 100px; height: 100px; }
+.icon-9 { background-position: -5px -840px; width: 100px; height: 100px; }
+.icon-1 { background-position: -5px -945px; width: 99px; height: 100px; }
+
 /*---------------------- 
     INFOBLOCKS STYLES
 ------------------------*/
@@ -264,15 +302,19 @@ header {
       @include flex($alignI: top, $justify: center, $wrap: wrap);
       
       .infoBlock  {
-                  margin-bottom: 20px;
+                  margin-bottom: 40px;
                   padding: 0 20px;
                   text-align: center;
-                  border: 1px solid peru;
+                  color: #FFF;
             &_icon {
-                        width: 150px;
-                        height: 150px;
+                        width: 100px;
+                        height: 100px;
                         text-align: center;
                         margin: 10px auto 15px;
+                        background-image: url("../images/icons.png");
+            }
+            p, h3 {
+                color: #FFF;
             }
         }
 
@@ -281,6 +323,49 @@ header {
       &.--three .infoBlock  {    width: 33%;}
 }
 
+#explain {
+    background-image: url("../images/explainBg.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    .infoBlock:nth-child {padding-right: 35px;}
+    .infoBlock:nth-child(2n) {
+        padding-left: 35px;
+        padding-right: 0;
+    }
+    .infoBlock_icon, .infoBlock__text {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+    }
+    .infoBlock__text {
+        width: calc(100% - 105px);
+        text-align: left;
+        padding-left: 15px;   
+    }
+
+}
+#explain .infoBlock:nth-of-type(1) .infoBlock_icon {background-position: -5px -630px;}
+#explain .infoBlock:nth-of-type(2) .infoBlock_icon {background-position: -5px -735px;}
+#explain .infoBlock:nth-of-type(3) .infoBlock_icon {background-position: -5px -840px;}
+#explain .infoBlock:nth-of-type(4) .infoBlock_icon {background-position: -5px -105px;}
+
+
+#howWeWork .infoBlock:nth-of-type(1) .infoBlock_icon {background-position: -5px -945px;}
+#howWeWork .infoBlock:nth-of-type(2) .infoBlock_icon {background-position: -5px -0px;}
+#howWeWork .infoBlock:nth-of-type(3) .infoBlock_icon {background-position: -5px -210px;}
+#howWeWork .infoBlock:nth-of-type(4) .infoBlock_icon {background-position: -5px -315px;}
+#howWeWork .infoBlock:nth-of-type(5) .infoBlock_icon {background-position: -5px -420px;}
+#howWeWork .infoBlock:nth-of-type(6) .infoBlock_icon {background-position: -5px -525px;}
+#howWeWork {
+    background-image: url("../images/howWeWorkBg.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    .infoBlocks {
+        background-image: url("../images/howWeBg-2.png");
+        background-position: 100% 22%;
+        background-repeat: no-repeat;
+    }
+}
 
 
 /*--------------------- Working space ------------------------*/

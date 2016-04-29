@@ -98,7 +98,7 @@
 
 // COLORS
 // ---------------------------
-$colorGrey: #3A3A3A;
+$colorGrey: #2C2D2E;
 $colorGreyL: #808182;
 $colorBlue: #30A7E4;
 $colorBlueD: #062A41;
@@ -108,21 +108,28 @@ $colorBlueD: #062A41;
 // ---------------------------
 $fontH2: 36px/48px 'museo_cyrl700';
 $fontT: 16px 'museo_sans_cyrl300';
+$fontVerdana: 13px 'verdana';
 
 
 html, body                    	{   height: 100%; font-family: 'museo_sans_cyrl300';}
 p                             	{   color: $colorGrey; font: $fontT;}
+.white                          {   color: #FFF;}
 h1, h2, h3, h4, h5, p         	{   color: $colorGrey;}
 h1, h2, h3, h4, h5              {	font-family: 'museo_cyrl700';}
+h2 {
+    margin-bottom: 45px;
+    font: $fontH2;
+}
 
 
 // lAYOUT
 // ---------------------------
 
-.wrapper                      	{   width: 1200px;
+.wrapper                      	{   width: 960px;
 								   	margin: 0 auto;
                                    	text-align: center;
                               	}
+section                         {padding: 70px 0;}
 header 							{}
 aside 							{}
 main 							{}
