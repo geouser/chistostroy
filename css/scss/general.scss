@@ -282,19 +282,6 @@ header {
 
 }
 
-
- 
-.icon-2 { background-position: -5px -0px; width: 101px; height: 100px; }
-.icon-10 { background-position: -5px -105px; width: 100px; height: 100px; }
-.icon-3 { background-position: -5px -210px; width: 100px; height: 100px; }
-.icon-4 { background-position: -5px -315px; width: 100px; height: 100px; }
-.icon-5 { background-position: -5px -420px; width: 100px; height: 100px; }
-.icon-6 { background-position: -5px -525px; width: 100px; height: 100px; }
-.icon-7 { background-position: -5px -630px; width: 100px; height: 100px; }
-.icon-8 { background-position: -5px -735px; width: 100px; height: 100px; }
-.icon-9 { background-position: -5px -840px; width: 100px; height: 100px; }
-.icon-1 { background-position: -5px -945px; width: 99px; height: 100px; }
-
 /*---------------------- 
     INFOBLOCKS STYLES
 ------------------------*/
@@ -327,6 +314,7 @@ header {
     background-image: url("../images/explainBg.jpg");
     background-size: cover;
     background-position: 50% 50%;
+    padding-bottom: 0 !important;
     .infoBlock:nth-child {padding-right: 35px;}
     .infoBlock:nth-child(2n) {
         padding-left: 35px;
@@ -366,6 +354,82 @@ header {
         background-repeat: no-repeat;
     }
 }
+
+
+form.bordered {
+    border: 10px solid rgba(255,255,255, .2);
+    margin-bottom: -10px;
+    padding: 40px;
+}
+
+    form h3 {
+        color: #FFF;
+    }
+
+
+/*---------------------- 
+    Ul lists
+------------------------*/
+#services,
+#reasons {
+    background: url('../images/header_info_bg.jpg') repeat;
+}
+.list {
+    border: 5px solid #EEE;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(50% - 22px);
+    box-shadow: 0px 2px 21px 0px rgba(0, 0, 0, .3);
+    margin-top: 55px;
+    background-color: #FFF;
+    &:nth-of-type(2) {
+        margin-left: 40px;
+    }
+    img {
+        width: 100%;
+    }
+    h3 {
+        font-size: 24px;
+        text-align: center;
+        margin: 25px 0 20px 0;
+        text-transform: uppercase;
+    }
+    ul {
+        padding: 0 25px;
+        background-color: #FFF;
+        list-style-type: none;
+        text-align: left;
+        margin: 0;
+        li {
+            padding: 17px 0 17px 20px;
+            position: relative;
+            border-top: 2px solid #E8E8E8;
+            &:before {
+                @include position(absolute, 20px, auto, auto, 0);
+                width: 9px; height: 9px;
+                background-image: url("../images/list-blue.png"); 
+                background-size: 100% 100%;
+                content: ""; display: inline-block;
+            }
+        }   
+    }
+    &.--green li,
+    &.--red li          {   padding-left: 27px;}
+    &.--green li:before {
+        background-image: url("../images/list-green.png"); 
+        width: 14px;
+        height: 14px;
+        top: 16px;
+    }
+    &.--red li:before {
+        background-image: url("../images/list-red.png"); 
+        width: 14px;
+        height: 14px;
+        top: 16px;
+    } 
+}
+
+
 
 
 /*--------------------- Working space ------------------------*/
