@@ -35,6 +35,13 @@
   bottom: $bottom;
 }
 
+/* -------------- filter ---------- */
+@mixin filter ($param){
+  filter: $param;
+  -webkit-filter: $param;
+  -moz-filter: $param;
+  -o-filter: $param;
+}
 
 /* ------------------ flex ----------------- */
 @mixin flex($alignI: center, $justify: space-between, $direction: row, $wrap: nowrap  ) {
