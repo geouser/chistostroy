@@ -272,3 +272,12 @@ nav ul {
 /*--------------------- Working space ------------------------*/
 /*--------------------- Do not cross! ------------------------*/
 
+/*---------------------- 
+    FOOTER
+------------------------*/
+footer {
+  padding: 15px 0;
+  color: #fff;
+  background: $colorBlueD;
+  @extend %clearfix;
+}
