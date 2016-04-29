@@ -1,0 +1,30 @@
+// COLORS
+// ---------------------------
+$colorPeru: #333;
+$colorChocolate: #333;
+$colorWheat: #333;
+
+
+// FONTS
+// ---------------------------
+$fontH: 24px/28px 'Helvetica';
+$fontSH: 22px/26px 'Helvetica';
+$fontT: 16px/22px 'Helvetica';
+
+
+html, body                    	{   height: 100%;}
+p                             	{   color: $colorPeru;}
+h1, h2, h3, h4, h5, p         	{   color: $colorPeru;}
+
+
+// lAYOUT
+// ---------------------------
+
+.wrapper                      	{   width: 1200px;
+								   	margin: 0 auto;
+                                   	text-align: center;
+                              	}
+header 							{}
+aside 							{}
+main 							{}
+footer 							{}
