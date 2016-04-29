@@ -77,7 +77,7 @@ $('.menu-button').on('click', function(event) {
       icon: markerImage,
       position: mapMarkerCoord, 
       map: map,
-      title:"Aplica"
+      title:"Чисто Строй"
     });
     
     $(window).resize(function (){
