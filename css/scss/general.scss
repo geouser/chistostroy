@@ -74,19 +74,28 @@ header {
      /*-------- header_info ---------*/       
     .header__info {
          background: url('../images/header_info_bg.jpg') no-repeat center center;
-         @include flex();
-         .logo {
+        .wrapper {
+             @include flex();   
+        }
+         
+        .logo {
                     position: relative;
                     height: 115px;
-
-            & a {
-                        display: block;
-                        height: 100%;
-                        width: 100%;
-                  & img {
-                            width: 100%;
-                }
+                    display: block;
+            & img {
+                        display: inline-block;
+                        vertical-align: middle;
             }
+            & span {
+                        display: inline-block;
+                        vertical-align: middle;
+            }
+        }
+
+        .contactUs {
+            a {
+                display: block;
+            }  
         }
     }/*-------- end header__info ---------*/     
 
@@ -198,6 +207,17 @@ header {
             z-index: 2;
             position: relative;
             text-align: center;
+            & h1 {
+                text-transform: uppercase;
+                span {
+                    display: block;
+                    text-transform: none;
+                    font-family: 'museo_sans_cyrl300';
+                }
+            }
+            p {
+                color: $colorBlue;
+            }
         }
 
 }
