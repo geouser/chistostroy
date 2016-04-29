@@ -88,7 +88,7 @@ header {
                 }
             }
         }
-    }
+    }/*-------- end header__info ---------*/     
 
 
     /*-------- nav ---------*/
@@ -99,20 +99,21 @@ header {
                     @include flex();
                     list-style-type: none;
                     margin: 0;
-                &  a {
-                        font:  12px 'museo_sans_cyrl500';
-                        text-transform: uppercase;
-                        color: #FFF;
-                        display: inline-block;
-                        padding: 22px 20px 15px;
-                        text-decoration: none;
-                        border-bottom: 4px solid transparent;
-                        @include transition(all, .2s);
-                    &:hover {border-bottom: 4px solid $colorGreyL;}
-                    &.active {border-bottom: 4px solid $colorBlue;}
-                }
+            &  a {
+                    font:  12px 'museo_sans_cyrl500';
+                    text-transform: uppercase;
+                    color: #FFF;
+                    display: inline-block;
+                    padding: 22px 20px 15px;
+                    text-decoration: none;
+                    border-bottom: 4px solid transparent;
+                    @include transition(all, .2s);
+                &:hover {border-bottom: 4px solid $colorGreyL;}
+                &.active {border-bottom: 4px solid $colorBlue;}
+            }
 
         }
+
         @include m800 { 
             display: block;
             height: 100%;
@@ -123,15 +124,15 @@ header {
                     @include flexDirection(column);
                     width: 100% !important;
                 }
-                      
                     &  li a  {   
                         margin: 0 0 25px 0;
                         &.active {color: #ECCC1D;}
                         &:hover  {background: transparent;}
                     } 
         }
-    }
-}
+    }/*-------- end nav ---------*/    
+       
+}/*-------- end header ---------*/       
 
 
 
