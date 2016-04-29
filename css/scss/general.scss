@@ -371,6 +371,46 @@ form.bordered {
 /*--------------------- Do not cross! ------------------------*/
 
 /*---------------------- 
+    ADDITIONALS
+------------------------*/
+.additionals {
+  padding-bottom: 0;
+
+  .box-wrap {
+    text-align: justify;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+
+    .feature {
+      width: 32.2%;
+      height: 220px;
+      border: 5px solid #fff;
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      box-shadow: 0px 2px 21px 0px rgba( 0, 0, 0, .31 );
+      padding: 45px 30px 0;
+
+      h3 {
+        font-size: 20px;
+        font-family: 'museo_cyrl900';
+        font-weight: normal;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+/*---------------------- 
     Ul lists
 ------------------------*/
 .services,
