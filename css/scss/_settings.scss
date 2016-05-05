@@ -127,25 +127,23 @@ strong                          {   font-weight: normal; font-family: 'museo_cyr
 // lAYOUT
 // ---------------------------
 
-.wrapper                      	{   width: 960px;
-								   	margin: 0 auto;
-                                   	text-align: center;
-                              	}
-@include m1200 {
-    .wrapper {
-        width: 970px;
+.wrapper {
+    width: 960px;
+	margin: 0 auto;
+    text-align: center;
+
+    @include tablets {
+        & {
+            width: 750px;
+        }
     }
-}
-@include tablets {
-    .wrapper {
-        width: 750px;
+    @include phones {
+        & {
+            width: 100%;
+            padding: 0 15px;
+        }
     }
-}
-@include phones {
-    .wrapper {
-        width: 100%;
-        padding: 0 15px;
-    }
+
 }
 section                         {padding: 70px 0;}
 header 							{}
