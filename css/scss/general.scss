@@ -415,6 +415,12 @@ form.horizontal {
   .box-wrap {
     text-align: justify;
 
+    @include phones {
+      & {
+        text-align: center;
+      }
+    }
+
     &:after {
       content: '';
       display: inline-block;
@@ -430,6 +436,24 @@ form.horizontal {
       text-align: center;
       box-shadow: 0px 2px 21px 0px rgba( 0, 0, 0, .31 );
       padding: 45px 30px 0;
+
+      @include tablets {
+        & {
+          padding-top: 20px;
+        }
+
+        br {
+          display: none;
+        }
+      }
+
+      @include phones {
+        & {
+          width: 270px;
+          margin: 0 1% 20px;
+          padding-top: 40px;
+        }
+      }
 
       h3 {
         font-size: 20px;
@@ -470,6 +494,15 @@ form.horizontal {
     background-color: #FFF;
     &:nth-of-type(2) {
         margin-left: 40px;
+    }
+
+    @include phones {
+      & {
+        width: 350px;
+        display: block;
+        vertical-align: top;
+        margin: 0 auto 50px auto!important;
+      }
     }
 
     .heading {
@@ -528,7 +561,14 @@ form.horizontal {
         }   
     }
     &.--green li,
-    &.--red li          {   padding-left: 27px;}
+    &.--red li          {
+      padding-left: 27px;
+      @include phones {
+        & {
+          height: auto!important;
+        }
+      }
+    }
     &.--green li:before {
         background-image: url("../images/list-green.png"); 
         width: 14px;
@@ -554,6 +594,15 @@ form.horizontal {
     vertical-align: middle;
     margin: 0 -2px;
     padding-right: 35px;
+
+    @include phones {
+      & {
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
     
     p {
       color: #fff;
@@ -561,6 +610,12 @@ form.horizontal {
       font: 14px 'museo_cyrl700';
       &.--left {
           text-align: left;
+
+          @include phones {
+            & {
+              text-align: center;
+            }
+          }
       }
       strong {
           display: block;
@@ -771,8 +826,21 @@ form.horizontal {
     border-left: 380px solid transparent;
     text-align: left;
 
+    @include phones {
+      & {
+        border-left: 320px solid transparent;
+      }
+    }
+
     .boss {
       @include position(absolute, auto, auto, 0, -430px);
+
+      @include phones {
+        & {
+          width: 350px;
+          left: -360px;
+        }
+      }
     }
   }
 
@@ -836,6 +904,14 @@ form.horizontal {
     border-right: 45px solid transparent;
     font-family: 'museo_sans_cyrl300';
     font-size: 18px;
+
+    @include phones {
+      & {
+        width: 100%;
+        border-right: 0;
+        margin-bottom: 50px;
+      }
+    }
 
     h2 {
       font-size: 26px;
@@ -960,6 +1036,12 @@ form.horizontal {
     height: 100%;
     @extend %vertAlign;
     text-align: right;
+
+    @include phones {
+      &:before {
+        display: none;
+      }
+    }
   }
 
   .map_canvas {
@@ -984,6 +1066,12 @@ form.horizontal {
   box-shadow: 0px 2px 21px 0px rgba( 0, 0, 0, .31 );
   color: #3a3a3a;
 
+  @include phones {
+    & {
+      width: 100%;
+    }
+  }
+
   &:before {
     content: '';
     width: 34px;
@@ -992,6 +1080,12 @@ form.horizontal {
     margin-top: -29px;
     background-image: url(../images/triangle.png);
     @include filter( drop-shadow(-12px 0px 6px rgba( 0, 0, 0, .1 )) );
+
+    @include phones {
+      & {
+        display: none;
+      }
+    }
   }
 
   h2 {
