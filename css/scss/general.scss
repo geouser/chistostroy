@@ -133,6 +133,7 @@ header {
         .contactUs {
             color: $colorGrey;
             text-align: left;
+            margin-left: 5%;
             a {
                 display: block;
                 text-align: left;
@@ -269,14 +270,17 @@ header {
             text-align: center;
             & h1 {
                 text-transform: uppercase;
+                font-size: 58px;
                 span {
                     display: block;
                     text-transform: none;
-                    font-family: 'museo_sans_cyrl300';
+                    font: 24px 'museo_sans_cyrl300';
+                    margin: 20px 0 25px;
                 }
             }
             p {
                 color: $colorBlue;
+                font: 28px 'museo_cyrl700';
             }
         }
 
@@ -289,10 +293,13 @@ header {
       @include flex($alignI: top, $justify: center, $wrap: wrap);
       
       .infoBlock  {
-                  margin-bottom: 40px;
-                  padding: 0 20px;
-                  text-align: center;
-                  color: #FFF;
+                margin-bottom: 40px;
+                padding: 0 20px;
+                text-align: center;
+                color: #FFF;
+            &__text p {
+                font-size: 14px;
+            }
             &_icon {
                         width: 100px;
                         height: 100px;
@@ -328,7 +335,11 @@ header {
     .infoBlock__text {
         width: calc(100% - 105px);
         text-align: left;
-        padding-left: 15px;   
+        padding-left: 15px;
+        h3 {
+            font-family: 'museo_sans_cyrl900';
+            margin-bottom: 6px;
+        } 
     }
 
 }
@@ -356,16 +367,34 @@ header {
 }
 
 
-form.bordered {
+form.horizontal {
     border: 10px solid rgba(255,255,255, .2);
     margin-bottom: -10px;
-    padding: 40px;
+    padding: 40px 34px;
+    background: transparent;
+    width: 100%;
+    h3 {
+        color: #FFF;
+        font: 24px 'museo_cyrl900';
+        margin-bottom: 25px;
+        small {
+            font-family: 'museo_sans_cyrl300';
+        }
+    }
+    .form__phone,
+    .form__name {
+        width: 270px !important;
+        margin-right: 25px;
+    }
 }
 
-    form h3 {
-        color: #FFF;
-    }
 
+#services {
+    padding-bottom: 0;
+    h2 {
+        margin-bottom: 25px;
+    }
+}
 
 /*--------------------- Working space ------------------------*/
 /*--------------------- Do not cross! ------------------------*/
@@ -511,13 +540,21 @@ form.bordered {
     display: inline-block;
     vertical-align: middle;
     margin: 0 -2px;
-    padding-right: 40px;
+    padding-right: 35px;
     
     p {
       color: #fff;
       text-align: right;
-      font-size: 24px;
-      line-height: 36px;
+      font: 14px 'museo_cyrl700';
+      &.--left {
+          text-align: left;
+      }
+      strong {
+          display: block;
+          font-size: 24px;
+          line-height: 36px;
+          margin-bottom: 8px;
+      }
     }
   }
 
