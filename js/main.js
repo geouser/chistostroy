@@ -116,13 +116,17 @@ $('.menu-button').on('click', function(event) {
 /*---------------------------
                               EQUAL HEIGHT
 ---------------------------*/
-  $(function (){
+  function equalize(){
     var i = 1;
     while ( $('.list_1_'+ i ).length == 2 ) {
+      $('.list_1_'+i).height('auto');
       $('.list_1_'+i).equalHeight();
       i++;
     }
-
+  };
+  equalize();
+  $(window).resize(function(event) {
+    equalize();
   });
 
   $('.works_slider').slick({

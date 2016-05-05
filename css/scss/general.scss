@@ -481,6 +481,12 @@ form.horizontal {
         display: inline-block;
         vertical-align: middle;
         width: 95%;
+
+        @include tablets {
+          & {
+            font-size: 20px;
+          }
+        }
       }
     }
 
@@ -561,6 +567,13 @@ form.horizontal {
           font-size: 24px;
           line-height: 36px;
           margin-bottom: 8px;
+
+          @include tablets {
+            & {
+              font-size: 20px;
+              line-height: normal;
+            }
+          }
       }
     }
   }
@@ -774,6 +787,15 @@ form.horizontal {
     font-size: 18px;
     line-height: 36px;
 
+    @include tablets {
+      & {
+        line-height: normal;
+      }
+      br {
+        display: none;
+      }
+    }
+
     &.blue {
       color: $colorBlue;
       margin-top: 35px;
@@ -818,6 +840,12 @@ form.horizontal {
     h2 {
       font-size: 26px;
       margin-bottom: 9px;
+
+      @include tablets {
+        & {
+          font-size: 20px;
+        }
+      }
     }
 
     .phone {
@@ -825,6 +853,12 @@ form.horizontal {
       color: $colorBlue!important;
       font-family: 'museo_sans_cyrl700';
       margin-bottom: 1px;
+
+      @include tablets {
+        & {
+          font-size: 38px;
+        }
+      }
     }
 
     hr {
@@ -841,7 +875,14 @@ form.horizontal {
 
     .tip {
       line-height: 30px;
+
+      @include tablets {
+        & br {
+          display: none;
+        }
+      }
     }
+
   }
 }
 .form {
@@ -908,6 +949,12 @@ form.horizontal {
 .map {
   height: 500px;
   position: relative;
+
+  @include tablets {
+    & {
+      height: 400px;
+    }
+  }
 
   .wrapper {
     height: 100%;
@@ -993,11 +1040,28 @@ footer {
     margin: 0 -2px;
     text-align: left;
 
+    @include tablets {
+      & {
+        width: 50%;
+      }
+    }
+
     .logo--footer {
       display: inline-block;
       vertical-align: middle;
       margin-right: 50px;
       width: 82px;
+
+      @include tablets {
+        & {
+          margin-right: 10px;
+          width: 60px;
+        }
+      }
+
+      img {
+        max-width: 100%;
+      }
     }
 
     p {
@@ -1006,6 +1070,12 @@ footer {
       font-family: Verdana;
       font-size: 13px;
       line-height: 22px;
+
+      @include tablets {
+        & {
+          font-size: 11px;
+        }
+      }
     }
   }
 
@@ -1014,6 +1084,12 @@ footer {
     display: inline-block;
     vertical-align: middle;
     margin: 0 -2px;
+
+    @include tablets {
+      & {
+        width: 50%;
+      }
+    }
 
     .phone_block {
       display: inline-block;
@@ -1027,6 +1103,12 @@ footer {
         font-size: 24px;
         font-family: 'museo_cyrl700';
         display: block;
+
+        @include tablets {
+          & {
+            font-size: 20px;
+          }
+        }
       }
 
       span {
@@ -1034,6 +1116,12 @@ footer {
         display: block;
         font-family: 'museo_sans_cyrl300';
         line-height: 18px;
+
+        @include tablets {
+          & {
+            font-size: 10px;
+          }
+        }
 
         &.hours {
           color: $colorBlue;
