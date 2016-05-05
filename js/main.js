@@ -100,6 +100,11 @@ $('.menu-button').on('click', function(event) {
 
   });
 
+  $('.works_slider').slick({
+    dots: true,
+    arrows: false
+  })
+
 });
 
 
