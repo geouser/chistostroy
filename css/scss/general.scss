@@ -1,7 +1,7 @@
 @import 'reset';
 @import 'settings';
 @import 'mixins';
-
+ 
 
 
 /*
@@ -404,6 +404,10 @@ form.horizontal {
 ------------------------*/
 .additionals {
   padding-bottom: 0;
+  background-image: url(../images/big_wall.jpg);
+  background-repeat: repeat-y;
+  background-size: 1920px auto;
+  background-position: 50% 50%;
 
   .box-wrap {
     text-align: justify;
@@ -444,7 +448,7 @@ form.horizontal {
 ------------------------*/
 .services,
 .reasons {
-    background: url('../images/header_info_bg.jpg') repeat;
+    background: url('../images/big_wall.jpg') repeat;
 }
 .reasons {
   padding-bottom: 0;
@@ -534,7 +538,7 @@ form.horizontal {
   margin-top: 80px;
   background-color: $colorBlueD;
   padding: 27px 50px;
-
+  
   .text {
     width: calc(100% - 270px);
     display: inline-block;
@@ -580,7 +584,7 @@ form.horizontal {
     text-align: left;
 
     .boss {
-      @include position(absolute, auto, auto, 0, -510px);
+      @include position(absolute, auto, auto, 0, -430px);
     }
   }
 
