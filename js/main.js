@@ -93,7 +93,6 @@ $('.menu-button').on('click', function(event) {
   $(function (){
     var i = 1;
     while ( $('.list_1_'+ i ).length == 2 ) {
-      console.log(i);
       $('.list_1_'+i).equalHeight();
       i++;
     }
