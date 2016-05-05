@@ -250,8 +250,20 @@
   }
 }
 
+@mixin phones {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
 @mixin m800 {
   @media (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media (max-width: 992px) {
     @content;
   }
 }
