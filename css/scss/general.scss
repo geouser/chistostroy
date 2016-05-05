@@ -27,7 +27,12 @@ CSS tooltip-----------  @include tooltiptooltip($content: attr(data-tooltip), $d
 */
 
 
-
+@include tablets { 
+    h2 {font: 28px/42px "museo_cyrl700";}
+}
+@include phones { 
+    h2 {font: 24px/36px "museo_cyrl700";}
+}
 /*---------------------- 
     BUTTON STYLES
 ------------------------*/
@@ -92,10 +97,11 @@ header {
             top: 55px;
             @include transition(all, .4s);
             
-    @include m800 {
+    @include tablets {
              @include position(fixed, 0, auto, auto, -100%);
              width: 260px !important;
              height: 100%;
+             overflow: scroll;
              text-align: center;
              margin-top: 0;
              padding: 20px 0;
@@ -128,6 +134,7 @@ header {
                         text-align: left;
                         margin-left: 24px;
             }
+
         }
 
         .contactUs {
@@ -153,6 +160,42 @@ header {
                 color: $colorGrey;
                 font-family: 'museo_cyrl700';
             }  
+        }
+        @include tablets { 
+            background: transparent;
+            .wrapper {
+                width: 100%;
+                display: block;
+            }
+            .logo {
+                    width: 100%;
+                    height: auto;
+                & img {
+                    display: block;
+                    width: 100px;
+                    margin: 10px auto;
+                }
+                & span {
+                    display: block;
+                    width: 100%;
+                    color: #FFF;
+                    text-align: center;
+                    margin: 5px 0 10px;
+                }
+
+            }
+            .contactUs {
+                color: #FFF;
+                text-align: center;
+                margin: 5px 0 20px 0;
+                a {
+                    text-align: center !important;
+                }
+                span {
+                    color: #FFF;
+                }
+            }
+
         }
     }/*-------- end header__info ---------*/     
 
@@ -185,18 +228,21 @@ header {
 
         }
 
-        @include m800 { 
+        @include tablets { 
             display: block;
-            height: 100%;
+            height: 300px;
             width: 100%;
             overflow: scroll;
             position: relative;
                 & ul { 
                     @include flexDirection(column);
                     width: 100% !important;
+                    height: 100%;
                 }
+                li:before {display: none;}
                     &  li a  {   
-                        margin: 0 0 25px 0;
+                        margin: 0 0 5px 0;
+                        padding: 0;
                         &.active {color: #ECCC1D;}
                         &:hover  {background: transparent;}
                     } 
@@ -220,7 +266,7 @@ header {
                                     margin: auto; 
                                     cursor: pointer;
                                     z-index: 100;
-                                    background-color: salmon;
+                                    background-color: #2C2D2E;
                                     border: none;
                                     -webkit-border-radius: 4px;
                                             border-radius: 4px;
@@ -244,8 +290,11 @@ header {
       &.active .bottom_line         {   @include transform(rotate(-45deg)); bottom: 45%;}
       &.active .middle_line         {   width: 0; left: 50%;}
 
-      @include m800 {
+      @include tablets {
             display: block;
+      }
+      @include m320 {
+            right: 5px;
       }
 
 }
@@ -264,6 +313,9 @@ header {
       background-size: cover;
       padding: 100px 0 0 0;
       position: relative;
+      @include tablets {
+            min-height: 450px;
+        }
 
         .offerInfo {
             height: 100%;
@@ -280,12 +332,37 @@ header {
                     font: 24px 'museo_sans_cyrl300';
                     margin: 20px 0 25px;
                 }
+                    @include tablets {
+                        font-size: 48px;
+                        span {
+                            font-size: 18px;
+                        }
+                    }
+                    @include phones {
+                        font-size: 38px;
+                        span {
+                            font-size: 16px;
+                        }
+                    }
+                    @include m360 {
+                        font-size: 32px;
+                    }
             }
             p {
                 color: $colorBlue;
                 font: 28px 'museo_cyrl700';
-            }
+                 @include tablets {
+                        font-size: 24px;
+                }
+                @include phones {
+                        font-size: 20px;
+                }
+                @include m360 {
+                        font-size: 18px;
+                }
         }
+    }
+
 
 }
 
@@ -318,6 +395,15 @@ header {
       &.--two  .infoBlock   {    width: 50%;}
       &.--four .infoBlock   {    width: 25%;}
       &.--three .infoBlock  {    width: 33%;}
+      @include tablets {
+          &.--two  .infoBlock   {    width: 100%;}
+          &.--four .infoBlock   {    width: 50%;}
+          &.--three .infoBlock  {    width: 50%;}
+      }
+      @include m550 {
+          &.--four .infoBlock   {    width: 100%;}
+          &.--three .infoBlock  {    width: 100%;}
+      }
 }
 
 #explain {
@@ -343,6 +429,9 @@ header {
             font-family: 'museo_sans_cyrl900';
             margin-bottom: 6px;
         } 
+    }
+    @include tablets {
+          .infoBlock {margin: 10px auto !important; padding: 0 !important;}
     }
 
 }
@@ -492,6 +581,10 @@ form.horizontal {
     box-shadow: 0px 2px 21px 0px rgba(0, 0, 0, .3);
     margin-top: 55px;
     background-color: #FFF;
+    @include phones {
+        width: 100%;
+        margin: 20px 0 !important;
+    }
     &:nth-of-type(2) {
         margin-left: 40px;
     }
@@ -645,15 +738,26 @@ form.horizontal {
 .works_slider {
     width: 1000px;
     margin-left: -20px;
+    @include tablets {
+        width: 100%;
+        margin: 0;
+    }
 }
 .works__work__main,
 .works__work__detail {
     display: inline-block;
     vertical-align: top;
     width: 49%;
+    @include m550 {
+        width: 100%;
+        padding-right: 0 !important;
+    }
 }
 .works__work {
     padding: 20px 0 0 20px;
+     @include m550 {
+        padding: 0 !important;
+    }
 }
 .works__work__main {
     padding-right: 30px;
@@ -675,6 +779,9 @@ form.horizontal {
             text-transform: uppercase;
             background-color: rgba(48, 167, 228, .9);
             font: 22px 'museo_cyrl700';
+        }
+        @include phones { 
+            span {font-size: 16px; width: 100px; padding: 13px 0 11px 0;}
         }
     }
      ul {
@@ -701,6 +808,10 @@ form.horizontal {
                 color: #30A7E4;
                 font: 24px 'museo_cyrl700';
             } 
+            @include phones { 
+                span {font-size: 14px;}
+                em {font-size: 18px;}
+            }
         }
     }
 }
@@ -711,6 +822,10 @@ form.horizontal {
         width: 60%;
         border-right: 1px solid  #E8E8E8;
         font-size: 28px;line-height: 34px;
+        padding-right: 5px;
+        @include phones { 
+            font-size: 20px; line-height: 24px;
+        }
     }
     em {
         display: inline-block; vertical-align: middle;
@@ -722,6 +837,9 @@ form.horizontal {
             text-align: center;
             color: #3A3A3A;
             margin: 0;
+        }
+        @include phones { 
+            font-size: 20px;
         }
     }
     small {
@@ -771,6 +889,10 @@ form.horizontal {
     position: relative;
     background-color: #fff;
     z-index: 2;
+    margin-top: 10px;
+    @include tablets {
+        width: 100%;
+    }
     &:after {
         display: inline-block;
         width: 45%;
@@ -790,6 +912,10 @@ form.horizontal {
         right: 0;
         border-top: 4px solid #E8E8E8;
         z-index: 1;
+    }
+    @include m550 {
+        &:before,
+        &:after {display: none;}
     }
     li {
         width: 16px;
