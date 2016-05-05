@@ -89,6 +89,7 @@ header {
             @include position(absolute, 0, auto, auto, 0);
             width: 100%;
             z-index: 100;
+            top: 55px;
             @include transition(all, .4s);
             
     @include m800 {
@@ -160,6 +161,9 @@ header {
     nav {
         width: 100%;
         background-color: $colorGrey;
+        position: fixed;
+        top: 0;
+        z-index: 10;
         & ul {
                     @include flex();
                     list-style-type: none;
@@ -174,7 +178,7 @@ header {
                     padding: 22px 18px 15px;
                     text-decoration: none;
                     border-bottom: 4px solid transparent;
-                    @include transition(all, .2s);
+                    @include transition(all, .1s);
                 &:hover {border-bottom: 4px solid $colorGreyL;}
                 &.active {border-bottom: 4px solid $colorBlue;}
             }
