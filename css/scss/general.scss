@@ -1,6 +1,8 @@
 @import 'reset';
 @import 'mixins';
-@import 'settings'; 
+@import 'settings';
+@import 'magnific-popup';
+
 
 
 /*
@@ -1375,6 +1377,9 @@ footer {
         margin-right: 10px;
         width: 60px;
       }
+      @include phones {
+        margin-right: 0;
+      }
 
       img {
         max-width: 100%;
@@ -1452,4 +1457,40 @@ footer {
       margin: 0 -2px;
     }
   }
+}
+
+
+
+.popup {
+  display: inline-block;
+  width: auto;
+  position: relative;
+  margin: 0 auto;
+
+
+  h3 {
+    font-size: 24px;
+    color: #fff;
+  }
+  p {
+    font-size: 14px;
+    color: #fff;
+    line-height: 24px;
+    margin-bottom: 15px;
+  }
+
+  .mfp-close {
+    color: #fff;
+    font-size: 40px;
+    right: auto;
+    left: 100%;
+
+    @include phones {
+      right: 0;
+      left: auto;
+    }
+  }
+}
+.mfp-auto-cursor .mfp-content {
+  text-align: center;
 }
