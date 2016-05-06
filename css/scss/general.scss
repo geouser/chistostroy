@@ -113,7 +113,7 @@ header {
             
      /*-------- header_info ---------*/       
     .header__info {
-         background: url('../images/header_info_bg.jpg') no-repeat center center;
+         background: url('../images/header_info_bg.jpg') repeat center center;
          padding: 14px 0;
         .wrapper {
              @include flex();   
@@ -121,7 +121,7 @@ header {
          
         .logo {
                     position: relative;
-                    height: 115px;
+                    height: 100%;
                     display: block;
             & img {
                         display: inline-block;
@@ -134,7 +134,6 @@ header {
                         text-align: left;
                         margin-left: 24px;
             }
-
         }
 
         .contactUs {
@@ -182,7 +181,6 @@ header {
                     text-align: center;
                     margin: 5px 0 10px;
                 }
-
             }
             .contactUs {
                 color: #FFF;
@@ -251,7 +249,15 @@ header {
        
 }/*-------- end header ---------*/       
 
-
+.logo--mobile {
+    @include position(absolute, 20px, 0, auto, 0);
+    display: none;
+    margin: auto;
+    z-index: 3;
+    @include tablets {
+        display: block; 
+    }
+}
 
 
 
@@ -309,13 +315,21 @@ header {
       height: 100%;
       min-height: 650px;
       max-height: 900px;
-      background: url('../images/offer_bg.jpg') no-repeat center center;
-      background-size: cover;
       padding: 100px 0 0 0;
       position: relative;
+      @media (min-width: 767px) {
+         background: url('../images/offer_bg.jpg') no-repeat center center;
+         background-size: cover;
+      } 
       @include tablets {
             min-height: 450px;
-        }
+            background: url('../images/offer_bg_tb.jpg') no-repeat center center;
+            background-size: cover;
+      }
+      @include phones {
+          background: url('../images/offer_bg_mb.jpg') no-repeat left center;
+           background-size: cover;
+      }
 
         .offerInfo {
             height: 100%;
@@ -608,7 +622,7 @@ form.horizontal {
     background-color: #FFF;
     @include phones {
         width: 100%;
-        margin: 20px 0 !important;
+        margin: 25px auto 25px !important;
     }
     &:nth-of-type(2) {
         margin-left: 40px;
@@ -618,13 +632,11 @@ form.horizontal {
         width: 350px;
         display: block;
         vertical-align: top;
-        margin: 0 auto 50px auto!important;
     }
     @media (max-width: 400px) {
         width: 95%;
         display: block;
         vertical-align: top;
-        margin: 0 auto 50px auto!important;
     }
 
     .heading {
