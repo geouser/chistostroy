@@ -455,6 +455,9 @@ header {
         background-image: url("../images/howWeBg-2.png");
         background-position: 100% 22%;
         background-repeat: no-repeat;
+        @include tablets {
+          background-image: none;
+        }
     }
 }
 
@@ -512,13 +515,17 @@ form.horizontal {
   background-size: 1920px auto;
   background-position: 50% 50%;
 
+  .wrapper {
+    @include phones {
+      padding: 0;
+    }
+  }
+
   .box-wrap {
     text-align: justify;
 
     @include phones {
-      & {
-        text-align: center;
-      }
+      text-align: center;
     }
 
     &:after {
@@ -580,6 +587,13 @@ form.horizontal {
 .reasons {
   padding-bottom: 0;
 
+  .wrapper {
+    @include phones {
+      padding: 0;
+    }
+  }
+
+
   .list {
     margin-top: 0;
   }
@@ -606,8 +620,8 @@ form.horizontal {
         vertical-align: top;
         margin: 0 auto 50px auto!important;
     }
-    @include m360 {
-        width: 100%;
+    @media (max-width: 400px) {
+        width: 95%;
         display: block;
         vertical-align: top;
         margin: 0 auto 50px auto!important;
@@ -695,6 +709,10 @@ form.horizontal {
   margin-top: 80px;
   background-color: $colorBlueD;
   padding: 27px 50px;
+
+  @include phones {
+    padding: 27px 10px;
+  }
   
   .text {
     width: calc(100% - 270px);
@@ -716,13 +734,16 @@ form.horizontal {
       color: #fff;
       text-align: right;
       font: 14px 'museo_cyrl700';
+
+      @include phones {
+        text-align: center;
+      }
+
       &.--left {
           text-align: left;
 
           @include phones {
-            & {
-              text-align: center;
-            }
+            text-align: center;
           }
       }
       strong {
@@ -969,7 +990,9 @@ form.horizontal {
 
     @include phones {
       & {
-        border-left: 320px solid transparent;
+        border-left: 0;
+        text-align: center;
+        padding: 50px 15px;
       }
     }
 
@@ -977,10 +1000,7 @@ form.horizontal {
       @include position(absolute, auto, auto, 0, -430px);
 
       @include phones {
-        & {
-          width: 350px;
-          left: -360px;
-        }
+        display: none;
       }
     }
   }
@@ -1072,9 +1092,11 @@ form.horizontal {
       margin-bottom: 1px;
 
       @include tablets {
-        & {
-          font-size: 38px;
-        }
+        font-size: 38px;
+      }
+
+      @include phones {
+        font-size: 30px;
       }
     }
 
@@ -1109,6 +1131,15 @@ form.horizontal {
   margin: 0 -2px;
   display: inline-block;
   vertical-align: middle;
+
+  @include phones {
+    width: 290px;
+    padding: 20px;
+
+    .button {
+      width: 100%;
+    }
+  }
 
   span {
     width: 100%;
@@ -1168,10 +1199,14 @@ form.horizontal {
   position: relative;
 
   @include tablets {
-    & {
-      height: 400px;
-    }
+    height: 400px;
   }
+
+  @include phones {
+    padding: 0;
+    height: auto;
+  }
+
 
   .wrapper {
     height: 100%;
@@ -1179,6 +1214,8 @@ form.horizontal {
     text-align: right;
 
     @include phones {
+      height: auto;
+      padding: 25px 15px;
       &:before {
         display: none;
       }
@@ -1190,6 +1227,12 @@ form.horizontal {
     height: 100%;
     @include position(absolute, 0, 0, 0, 0);
     z-index: 5;
+
+    @include phones {
+      position: relative;
+      height: 250px;
+      width: 100%;
+    }
   }
 }
 
@@ -1208,9 +1251,8 @@ form.horizontal {
   color: #3a3a3a;
 
   @include phones {
-    & {
-      width: 100%;
-    }
+    width: 100%;
+    box-shadow: none;
   }
 
   &:before {
@@ -1276,9 +1318,13 @@ footer {
     text-align: left;
 
     @include tablets {
-      & {
-        width: 50%;
-      }
+      width: 50%;
+    }
+
+    @include phones {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
     .logo--footer {
@@ -1288,10 +1334,8 @@ footer {
       width: 82px;
 
       @include tablets {
-        & {
-          margin-right: 10px;
-          width: 60px;
-        }
+        margin-right: 10px;
+        width: 60px;
       }
 
       img {
@@ -1307,9 +1351,7 @@ footer {
       line-height: 22px;
 
       @include tablets {
-        & {
-          font-size: 11px;
-        }
+        font-size: 11px;
       }
     }
   }
@@ -1321,9 +1363,11 @@ footer {
     margin: 0 -2px;
 
     @include tablets {
-      & {
-        width: 50%;
-      }
+      width: 50%;
+    }
+
+    @include phones {
+      width: 100%;
     }
 
     .phone_block {
@@ -1334,15 +1378,19 @@ footer {
       text-align: left;
       color: #fff;
 
+      @include phones {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
       a {
         font-size: 24px;
         font-family: 'museo_cyrl700';
         display: block;
 
         @include tablets {
-          & {
-            font-size: 20px;
-          }
+          font-size: 20px;
         }
       }
 
@@ -1353,9 +1401,7 @@ footer {
         line-height: 18px;
 
         @include tablets {
-          & {
-            font-size: 10px;
-          }
+          font-size: 10px;
         }
 
         &.hours {
