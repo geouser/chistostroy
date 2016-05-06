@@ -87,6 +87,19 @@ $('.menu-button').on('click', function(event) {
     var long = $('#map_canvas').data('long');
     var mapCenterCoord = new google.maps.LatLng(lat+0.001, long+0.006);
     var mapMarkerCoord = new google.maps.LatLng(lat, long);
+    if ( $(window).width() < 768 ) {
+      mapCenterCoord = new google.maps.LatLng(lat, long);
+      mapMarkerCoord = new google.maps.LatLng(lat, long);
+    }
+    $(window).resize(function(event) {
+      if ( $(window).width() < 768 ) {
+        mapCenterCoord = new google.maps.LatLng(lat, long);
+        mapMarkerCoord = new google.maps.LatLng(lat, long);
+      } else {
+        mapCenterCoord = new google.maps.LatLng(lat+0.001, long+0.006);
+        mapMarkerCoord = new google.maps.LatLng(lat, long);
+      }
+    });
 
     var mapOptions = {
       center: mapCenterCoord,
