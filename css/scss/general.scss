@@ -121,10 +121,12 @@ header {
              padding: 20px 0;
              z-index: 100;
              background-color: $colorGrey;
-             @include flex($alignI: center, $justify: space-around,  $direction: column);  
              
              &.active {left: 0;}
              &:after {display: none;}
+    }
+    @media (max-width: 1000px) and (min-height: 600px) {
+        @include flex($alignI: center, $justify: space-around,  $direction: column);  
     }
             
      /*-------- header_info ---------*/       
