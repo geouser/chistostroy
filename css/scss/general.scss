@@ -121,6 +121,7 @@ header {
              padding: 20px 0;
              z-index: 100;
              background-color: $colorGrey;
+             @include flex($alignI: center, $justify: space-around,  $direction: column);  
              
              &.active {left: 0;}
              &:after {display: none;}
@@ -200,7 +201,7 @@ header {
             .contactUs {
                 color: #FFF;
                 text-align: center;
-                margin: 5px 0 20px 0;
+                margin: 20px 0;
                 a {
                     text-align: center !important;
                 }
